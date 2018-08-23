@@ -1,0 +1,21 @@
+{
+  "name": "cage-tessel",
+  "version": "0.0.0",
+  "description": "use a Tessel 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/pchinjr/cage-tessel.git",
+  "keywords": [
+    "Tessel"
+  ],
+  "license": "MIT",
+  "readme": "A bare bones Tessel 2 blinky script.",
+  "dependencies": {
+    "express": "^4.16.3",
+    "johnny-five": "^1.0.0",
+    "socket.io": "^2.1.1",
+    "tessel-io": "^1.2.0"
+  }
+}

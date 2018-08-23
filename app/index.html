@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>One True Cage</title>
+  <style type="text/css">
+  #stream img
+  {
+      max-width:100%; 
+      max-height:100%;
+      margin:auto;
+      display:block;
+  }
+  </style>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="stream">
+      <img src="nickcagemask.png"/>
+    </div>
+  <script>
+    var socket = io.connect('/');
+
+    socket.on('connect', function(data) {
+      socket.emit('join');
+    });
+
+    socket.on('push', function(data){
+      let eyes = document.getElementById('stream');
+      eyes.style.background = `radial-gradient(ellipse at center, rgba(255, 221,50, ${data}) 30%, rgba(125, 185, 232, 0) 40%)`;
+    });
+
+  </script>
+</body>
+</html>
